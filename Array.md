@@ -236,18 +236,33 @@ Space Complexity: O(n)
   </details>
   
    <details>
-    <summary> Recursive Approach</summary>
+    <summary> Optimise Approach</summary>
     
   <details>
       <summary> Approach/Institution</summary>
+    Solution2:Using a max variable
+<h3>Intuition: </h3>
+We can maintain a max variable that will update whenever the current value is greater than the value in the max variable.  
+
+<h3>Approach:</h3>
+Create a max variable and initialize it with arr[0].
+Use a for loop and compare it with other elements of the array
+If any element is greater than the max value, update max value with the element’s value
+Print the max variable.
   </details>
       
   <details>
    <summary> Code</summary>
+    <code>
+      
+    </code>
   </details>
 
   <details>
   <summary> Complexity Analysis</summary>
+    Time Complexity: O(N)
+
+Space Complexity: O(1)
   </details>
   </details>
   </div>
