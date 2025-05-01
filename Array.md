@@ -1,17 +1,4 @@
-#include <iostream>
-using namespace std;
-int main(){
-  int arr [5] = {2,4,6,2,8};
-  int size = 5;
-  int largest = arr[0];
-  for(int i=0; i<size; i++){
-    if(arr[i]>largest){
-      largest=arr[i];
-    }
-  }
-  cout<<largest<<endl;
-  return 0;
-}# Array 
+# Array 
 - Data structure is a structure of our code which store data and algorithms is method or operations performed on data.
 
 ### Array Syntex 
@@ -192,7 +179,7 @@ int main(){
   return 0;
 }
 ```
-
+## Easy 
 #### Reverse the original array by 2 pointer Algorithm:
 
 ```
