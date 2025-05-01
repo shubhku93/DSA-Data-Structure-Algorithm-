@@ -179,7 +179,15 @@ int main(){
   return 0;
 }
 ```
-## Easy 
+<details>
+  <summary><strong> Easy Problem</strong>
+  </summary>
+<div>
+  <bold>
+   Largest 
+  </bold>
+  </div>
+</details>
 #### Reverse the original array by 2 pointer Algorithm:
 
 ```
