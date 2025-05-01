@@ -200,8 +200,55 @@ Input: arr[] = {8,10,5,7,9};
 Output: 10
 Explanation: 10 is the largest element in the array. 
     </details>
-<details> 
+    
+<details> <summary>Brute Force Approach </summary>
   
+  <details> 
+    <summary> Approach</summary>
+    Solution1: Sorting
+<h3> Intuition:</h3>
+We can sort the array in ascending order, hence the largest element will be at the last index of the array. 
+
+<h3>Approach: </h3>
+Sort the array in ascending order.
+Print the (size of the array -1)th index.
+DryRun: 
+Before sorting: arr[] = {2,5,1,3,0};
+
+After sorting: arr[] = {0,1,2,3,5};
+
+Hence answer : arr[sizeofthearray-1] =5
+  </details>
+  
+<details>
+<summary>Code</summary>
+  <code>
+    
+  </code>
+</details>
+  
+  <details>
+  <summary>Complexity Analysis</summary>
+    Time Complexity: O(N*log(N))
+
+Space Complexity: O(n)
+  </details>
+  </details>
+  
+   <details>
+    <summary> Recursive Approach</summary>
+    
+  <details>
+      <summary> Approach/Institution</summary>
+  </details>
+      
+  <details>
+   <summary> Code</summary>
+  </details>
+
+  <details>
+  <summary> Complexity Analysis</summary>
+  </details>
   </details>
   </div>
 </details>
