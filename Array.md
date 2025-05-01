@@ -180,12 +180,29 @@ int main(){
 }
 ```
 <details>
-  <summary><strong> Easy Problem</strong>
-  </summary>
+  <summary><h3> Easy Problem</h3></summary>
+  
 <div>
-  <bold>
-   Largest 
-  </bold>
+  <details>
+    <summary> <h4> Largest Element in a Array </h4></summary>
+    
+    <h5>Problem Statement: </h5> Given an array you have to find the largest element in the array 
+    
+    <details>
+    <summary> Examples</summary>
+  <h5>Example 1:</h5>
+Input: arr[] = {2,5,1,3,0};
+Output: 5
+Explanation: 5 is the largest element in the array. 
+<br>
+<h5>Example2:</h5>
+Input: arr[] = {8,10,5,7,9};
+Output: 10
+Explanation: 10 is the largest element in the array. 
+    </details>
+<details> 
+  
+  </details>
   </div>
 </details>
 #### Reverse the original array by 2 pointer Algorithm:
