@@ -186,10 +186,10 @@ int main(){
   <details>
     <summary> <h4> Largest Element in a Array </h4></summary>
     
-    <h5>Problem Statement: </h5> Given an array you have to find the largest element in the array 
+<h5>Problem Statement: </h5> Given an array you have to find the largest element in the array 
     
-    <details>
-    <summary> Examples</summary>
+<details>
+ <summary> Examples</summary>
   <h5>Example 1:</h5>
 Input: arr[] = {2,5,1,3,0};
 Output: 5
