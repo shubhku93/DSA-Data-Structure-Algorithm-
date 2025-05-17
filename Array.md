@@ -266,7 +266,16 @@ Space Complexity: O(1)
   </details>
   </details>
   </div>
+// Second Largest element
+<div>
+  <details>
+    <summary>Second Largest Element in a Array without Sorting</summary>
+    <h5> Problem Statement: </h5>Given an array, find the second smallest and second largest element in the array. Print ‘-1’ in the event that either of them doesn’t exist.  
+    <detail>
+      <summary>
+</div>
 </details>
+
 #### Reverse the original array by 2 pointer Algorithm:
 
 ```
