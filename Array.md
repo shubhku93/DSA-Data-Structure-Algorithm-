@@ -344,6 +344,42 @@ Dry Run</summary>
   <summary> Complexity Analysis</summary>
 </details>
 </details>
+
+<!--Find the largest and second largest element in a array-->
+<details>
+<summary>
+  <h4> Find the largest and second largest element </h4>
+</summary>
+</details>
+
+<!--Examples-->
+<details>
+  <summary>Examples</summary>
+</details>
+
+<!--Brute Force Approach-->
+<details>
+<summary>Brute Force Approach</summary>
+  
+<!--Approach-->
+<details>
+<summary>Approach/Intuition</summary>
+</details>
+
+<!--Dry Run-->
+  <details>
+  <summary>Dry Run</summary>
+  </details>
+  
+<!--Code-->
+<details>
+  <summary>Code</summary>
+</details>
+
+<!--Complexity Analysis --><details>
+  <summary> Complexity Analysis</summary>
+</details>
+</details>
 </div>
 </details>
 
@@ -367,7 +403,7 @@ int main(){
 ```
 ### Linear search Algorithm Questions : Given a array with a target we have to search that target in the array.
 
-### Find the largest and second largest element.
+.
 
 ```
 // Find the Largest element and second largest element 
