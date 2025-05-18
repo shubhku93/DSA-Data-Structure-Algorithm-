@@ -180,9 +180,11 @@ int main(){
 }
 ```
 <details>
+  <!--Easy Problem of Array-->
   <summary><h3> Easy Problem</h3></summary>
-  
+
 <div>
+  <!-- Find Largest Element-->  
   <details>
     <summary> <h4> Largest Element in a Array </h4></summary>
     
@@ -272,7 +274,32 @@ Space Complexity: O(1)
     <summary>Second Largest Element in a Array without Sorting</summary>
     <h5> Problem Statement: </h5>Given an array, find the second smallest and second largest element in the array. Print ‘-1’ in the event that either of them doesn’t exist.  
     <detail>
-      <summary>
+      <summary>Examples</summary>
+      <h5> Example 1: </h5>
+      Input: [1,2,4,7,7,5]
+      Output: Second Smallest=2
+       Second Largest=5
+      Explaination: Element are as follow 1,2,4,5,7,7 and hence the second Largest element of these is 5 and the second Smallest is 2.
+    </detail>
+    <detail>
+      <summary>Brute Force Approach</summary>
+      
+</div>
+<!--Array is sorted or not-->
+<div>
+  <
+  <!--Exlample-->
+  <details>
+    <summary>Examples</summary>
+  </details>
+    <!--Brute Force Approach-->
+      <details>
+    <summary>Brute Force Approach</summary>
+  </details>
+    <!--Optimise Approach -->
+      <details>
+    <summary></summary>
+  </details>
 </div>
 </details>
 
@@ -291,7 +318,7 @@ int main(){
   for(int i=0;i<sz;i++){
     cout<<arr[i]<<" ";
   }
-  return 0;
+  return 0;l
 }
 ```
 ### Linear search Algorithm Questions : Given a array with a target we have to search that target in the array.
