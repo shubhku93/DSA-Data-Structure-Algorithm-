@@ -180,11 +180,11 @@ int main(){
 }
 ```
 <details>
-  <!--Easy Problem of Array-->
+<!--Easy Problem of Array-->
   <summary><h3> Easy Problem</h3></summary>
 
 <div>
-  <!-- Find Largest Element-->  
+<!-- Find Largest Element-->  
   <details>
     <summary> <h4> Largest Element in a Array </h4></summary>
     
@@ -268,7 +268,7 @@ Space Complexity: O(1)
   </details>
   </details>
   </div>
-// Second Largest element
+<!-- Second Largest element-->
 <div>
   <details>
     <summary>Second Largest Element in a Array without Sorting</summary>
@@ -285,21 +285,65 @@ Space Complexity: O(1)
       <summary>Brute Force Approach</summary>
       
 </div>
+
 <!--Array is sorted or not-->
 <div>
-  <
-  <!--Exlample-->
+<details>
+    <summary><h3>Array is sorted or not</h3> </summary>
+  
+<!--Exlample-->
+<details>
+    <summary><h5>Examples</h5></summary>
+</details>
+    
+<!--Brute Force Approach-->
+<details>
+<summary>Brute Force Approach</summary>
+  
+<!--Approach-->
+<details>
+<summary>Approach/Intuition</summary>
+</details>
+
+<!--Dry Run-->
   <details>
-    <summary>Examples</summary>
+  <summary>Dry Run</summary>
   </details>
-    <!--Brute Force Approach-->
-      <details>
-    <summary>Brute Force Approach</summary>
-  </details>
-    <!--Optimise Approach -->
-      <details>
-    <summary></summary>
-  </details>
+  
+<!--Code-->
+<details>
+  <summary>Code</summary>
+</details>
+
+<!--Complexity Analysis --><details>
+  <summary> Complexity Analysis</summary>
+</details>
+</details>
+
+<!--Optimise Approach -->
+<details>
+<summary>Optimization</summary>
+  
+<!--Approach/Institution--><details>
+<summary> Approach/Institution</summary>
+ </details>
+
+<!--Dry Run-->
+<details>
+<summary>
+Dry Run</summary>
+</details>
+
+<!--Code-->
+<details>
+  <summary>Code </summary>
+</details>
+
+<!--Complexity Analysis-->
+<details>
+  <summary> Complexity Analysis</summary>
+</details>
+</details>
 </div>
 </details>
 
