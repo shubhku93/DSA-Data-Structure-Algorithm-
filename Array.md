@@ -181,36 +181,31 @@ int main(){
 ```
 <details>
 <!--Easy Problem of Array-->
-  <summary><h3> Easy Problem</h3></summary>
-
-<div>
+<summary><h3> Easy Problem</h3></summary>
 <!-- Find Largest Element-->  
-  <details>
-    <summary> <h4> Largest Element in a Array </h4></summary>
-    
-<h5>Problem Statement: </h5> Given an array you have to find the largest element in the array 
-    
+<div><details>
+<summary> <h4> Largest Element in a Array </h4></summary>
+<h5>Problem Statement: </h5> Given an array you have to find the largest element in the array
+<!--Examples-->
 <details>
- <summary> Examples</summary>
-  <h5>Example 1:</h5>
+<summary> Examples</summary>
+<h5>Example 1:</h5>
 Input: arr[] = {2,5,1,3,0};
 Output: 5
 Explanation: 5 is the largest element in the array. 
-<br>
+  
 <h5>Example2:</h5>
 Input: arr[] = {8,10,5,7,9};
 Output: 10
-Explanation: 10 is the largest element in the array. 
-    </details>
-    
+Explanation: 10 is the largest element in the array.</details>
+ <!--Brute Force Approach-->  
 <details> <summary>Brute Force Approach </summary>
-  
-  <details> 
-    <summary> Approach</summary>
-    Solution1: Sorting
+<!--Approach-->
+<details> 
+<summary> Approach</summary>
+Solution1: Sorting
 <h3> Intuition:</h3>
 We can sort the array in ascending order, hence the largest element will be at the last index of the array. 
-
 <h3>Approach: </h3>
 Sort the array in ascending order.
 Print the (size of the array -1)th index.
@@ -221,18 +216,17 @@ After sorting: arr[] = {0,1,2,3,5};
 
 Hence answer : arr[sizeofthearray-1] =5
   </details>
-  
+<!--Code-->  
 <details>
 <summary>Code</summary>
   <code>
     
   </code>
 </details>
-  
-  <details>
-  <summary>Complexity Analysis</summary>
-    Time Complexity: O(N*log(N))
-
+<!--Complexity Analysis-->
+<details>
+<summary>Complexity Analysis</summary>
+Time Complexity: O(N*log(N))
 Space Complexity: O(n)
   </details>
   </details>
