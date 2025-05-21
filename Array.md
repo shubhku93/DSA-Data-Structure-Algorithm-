@@ -1,5 +1,6 @@
 # Array 
 - Data structure is a structure of our code which store data and algorithms is method or operations performed on data.
+- Array is a Data Structure that store different data types but only 1 at a time.It store data in linear form
 
 ### Array Syntex 
 int (variable name) [size] ={num,num};
