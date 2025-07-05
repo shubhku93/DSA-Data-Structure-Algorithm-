@@ -407,7 +407,7 @@ Explanation: There exist no such two numbers whose sum is equal to the target.
 
 #### Brute Force Approach
 
-##### Approach
+##### Approach (variant 1)
 - We will run a loop(say i) to select each element from 0 to n-1.
 - Initialise Sum with a value 0.
 - Now we will run another loop(say j) from i+1 to n-1.
@@ -421,8 +421,32 @@ Given array, nums = [2,1,3,4], target = 4
 ```
 #include <bits/stdc++.h>
 using namespace std;
+string f(vector<int> &v,int k){
+  for(int i=0; i<v.size(); i++){
+   int sum= 0;
+    for(int j=i+1; j<v.size(); j++){
+      sum= v[i]+v[j];
+      if(sum==k) return "yes";
+    }  
+  }
+  return "no";
+} 
+int main(){
 
+  vector<int> arr1 = {2,6,5,8,11};
+  vector<int> arr2 = {2, 3, 4, 4, 5, 11, 12};
+  cout<<f(arr1,8);
+
+  return 0;
+}
 ```
+#### Complexity Anys
+#### Approach (variant 2)
+-We will run a loop(say i) to select each element from 0 to n-1.
+- Initialise Sum with a value 0.
+- Now we will run another loop(say j) from i+1 to n-1.
+- if the sum of arr[i]+arr[j] equal to target.
+
 #### Reverse the original array by 2 pointer Algorithm:
 
 ```
