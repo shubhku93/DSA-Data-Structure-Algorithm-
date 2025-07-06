@@ -416,7 +416,9 @@ Explanation: There exist no such two numbers whose sum is equal to the target.
   
 #### Dry Run
 Given array, nums = [2,1,3,4], target = 4
-
+i=0: sum=3,5,6
+i=1: sum=4,5
+i=2: sum=7
 #### Code
 ```
 #include <bits/stdc++.h>
@@ -440,19 +442,95 @@ int main(){
   return 0;
 }
 ```
-#### Complexity Anys
+#### Complexity Analysis
+- Time Complexity : O(n²)
+- Space Complexity : O(1)
+  
 #### Approach (variant 2)
 -We will run a loop(say i) to select each element from 0 to n-1.
 - Initialise Sum with a value 0.
 - Now we will run another loop(say j) from i+1 to n-1.
 - if the sum of arr[i]+arr[j] equal to target.
 
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+vector<int> f(vector<int>&v,int k){
+  int n=v.size();
+  vector<int> ans;
+  for(int i=0; i<n; i++){
+    int sum=0;
+    for(int j=i+1; j<n; j++){
+      sum= v[i]+v[j];
+      if(sum==k){
+       ans.push_back(i);
+        ans.push_back(j);
+        return ans;
+      }
+    }
+  }
+  return {-1,-1};
+}
+int main(){
+  vector<int> v={2,1,3,4};
+vector<int> ans=f(v,4);
+  for(int i:ans)
+    cout<<i;
+  return 0;
+}
+```
+
+#### Complexity Analysis
+Time Complexity: O(n²)
+Space Complexity: O(n)
+
+#### Better Approach (using Hashing)
+
+#### Approach (variant 1)
+- First we will initialise map of int type.
+- Now we will run a loop(say i) from 0 to n-1.
+- inside the loop we will store current element in variable.
+- Subtract the current sum with target.
+- if that sum exists in map return yes
+- Otherwise no
+
+#### Dry Run
+Given array, nums = [2,1,3,4], target = 4
+i=0: sum= 4-2: mpp: empty
+i=1; sum= 4-1: mpp; 3,
+
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+string f(vector<int>&v,int k){
+  int n=v.size();
+  map<int,int> mpp;
+  for(int i=0; i<n; i++){
+    int num= v[i];
+    int sum= k-num;
+    if(mpp.find(sum)!=mpp.end()){
+      return "yes";
+    }
+    mpp[num]= i;
+  }
+  return "no";
+}
+int main(){
+  vector<int> v={2,1,3,4};
+cout<< f(v,4);
+  
+  return 0;
+}
+``|
 #### Reverse the original array by 2 pointer Algorithm:
 
 ```
 int main(){
   int arr[] = {1,2,3,4,5,6,7};
- int sz =7;
+ int sz =
+7;
   int start=0,end= 6;
   while(start<=end){
     swap(arr[start],arr[end]);
