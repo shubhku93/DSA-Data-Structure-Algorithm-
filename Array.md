@@ -523,7 +523,40 @@ cout<< f(v,4);
   
   return 0;
 }
-``|
+```
+
+#### Approach (variant 2)
+- we will initialise hashMap of int and int.
+- We run a loop from 0 to n-1
+- In this we will take current element into a  variable num.
+- From the target we will subtract num to get rest part of element
+- if the rest part exists return yes or 
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+vector <int> f(vector<int>&v,int k){
+  int n=v.size();
+  map<int,int> mpp;
+  for(int i=0; i<n; i++){
+    int num= v[i];
+    int sum= k-num;
+    if(mpp.find(sum)!=mpp.end()){
+      return {mpp[sum],i};
+      
+    }
+    mpp[num]= i;
+  }
+  return {-1,-1};
+}
+int main(){
+  vector<int> v={2,1,3,4};
+vector<int>ans=f(v,4);
+  for(int i:ans)
+    cout<<i;
+  return 0;
+}
+```
 #### Reverse the original array by 2 pointer Algorithm:
 
 ```
