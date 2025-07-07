@@ -557,6 +557,22 @@ vector<int>ans=f(v,4);
   return 0;
 }
 ```
+#### Complexity Analysis 
+
+### Sort 0s,1s and 2s
+
+#### Approach 
+- First initialise three variables cnt0, cnt1 and cnt2.
+- we will run a loop to select the element from 0 to n-1
+- check if current element is 1 increase cnt1 by 1.Else If  current element is 0 increase cnt0 by 1 and if current element is 2 increase by 1.
+- We will run another loop sort the array
+- Now first loop start from 0 to cnt0 put 0 to arr[i].
+- second loop start from cnt0 to cnt0+cnt1 in which we put 1 till last.
+- Third loop start from cnt0+cnt1 to n-1 in which we put 2 to arr[i].
+
+#### Dry Run
+i= 0: 
+  
 #### Reverse the original array by 2 pointer Algorithm:
 
 ```
