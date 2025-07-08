@@ -642,6 +642,14 @@ int main() {
     return 0;
 }
 ```
+#### Complexity Analysis 
+Time Complexity: 2O(N)
+Space Complexity: O(1)
+
+#### Optimize Approach 
+#### Approach 
+- First we take three pointer left and mid with a value 0 and high with n-1.
+- We will run a while loop until mid is less the high 
 
 #### Reverse the original array by 2 pointer Algorithm:
 
