@@ -378,6 +378,59 @@ Dry Run</summary>
 </div>
 </details>
 
+### Linear search Algorithm Questions : Given a array with a target we have to search that target in the array.
+
+.
+
+```
+// Find the Largest element and second largest element 
+void le(int arr[]){
+  // Initialise the largest element and second largest element as int min
+  int maxi=INT_MIN;
+  int smaxi=INT_MIN;
+  // Loop for finding the largest element
+  for(int i=0; i<5; i++){
+    if(arr[i]>maxi){
+      maxi=arr[i];
+    }
+  }
+  //Loop for finding the second largest element. I think we can use the same loop for finding the second largest element but we can't use because largest element is not calculated.
+  for(int i=0; i<5; i++){
+    if(arr[i]>smaxi && arr[i]!=maxi){
+     smaxi=arr[i];
+    }
+  }
+  cout<<maxi<<endl;
+  cout<<smaxi;
+}
+int main(){
+  int arr[5]={12, 35, 1, 10, 3};
+  le(arr);
+  return 0;
+}
+
+```
+### Reverse the original array by 2 pointer Algorithm:
+
+```
+int main(){
+  int arr[] = {1,2,3,4,5,6,7};
+ int sz =
+7;
+  int start=0,end= 6;
+  while(start<=end){
+    swap(arr[start],arr[end]);
+    start++;
+    end--;
+  }
+  for(int i=0;i<sz;i++){
+    cout<<arr[i]<<" ";
+  }
+  return 0;l
+}
+```
+
+
 ## Midium Problem
 
 ### 1. 2Sum Problem
@@ -646,56 +699,117 @@ int main() {
 ### Approach 
 - First initialise three pointer left and mid with a value 0 and high with n-1.
 - Now run while loop until mid is less high.
-- Check if mid is equal to 0 then first swap arr of [low] to arr of [mid] and increases by 1.If mid is equal to 1;
+- Check if mid is equal to 0 then first swap arr of [low] to arr of [mid] and increases by 1 left and right.If mid is equal to 1 increase mid by 1 and If mid equals to 2 then swap arr of [mid] to [high] and high will decrease by 1.
 
-#### Reverse the original array by 2 pointer Algorithm:
-
+#### Code 
 ```
-int main(){
-  int arr[] = {1,2,3,4,5,6,7};
- int sz =
-7;
-  int start=0,end= 6;
-  while(start<=end){
-    swap(arr[start],arr[end]);
-    start++;
-    end--;
-  }
-  for(int i=0;i<sz;i++){
-    cout<<arr[i]<<" ";
-  }
-  return 0;l
-}
-```
-### Linear search Algorithm Questions : Given a array with a target we have to search that target in the array.
+#include <bits/stdc++.h>
+using namespace std;
 
-.
-
-```
-// Find the Largest element and second largest element 
-void le(int arr[]){
-  // Initialise the largest element and second largest element as int min
-  int maxi=INT_MIN;
-  int smaxi=INT_MIN;
-  // Loop for finding the largest element
-  for(int i=0; i<5; i++){
-    if(arr[i]>maxi){
-      maxi=arr[i];
+void f(vector<int> &v) {
+    int n = v.size();
+    // Initialise 3 pointers
+   int low=0,mid=0,high=n-1;
+    // while mid is less than high
+    while(mid<high){
+        // Check and swap the the pointers
+        if(v[mid]==0){
+            swap(v[low],v[mid]);
+            low++,mid++;
+        }
+        else if(v[mid]==1){
+            mid++;
+        }
+        else {
+            swap(v[mid],v[high]);
+            high--;
+        }
     }
-  }
-  //Loop for finding the second largest element. I think we can use the same loop for finding the second largest element but we can't use because largest element is not calculated.
-  for(int i=0; i<5; i++){
-    if(arr[i]>smaxi && arr[i]!=maxi){
-     smaxi=arr[i];
-    }
-  }
-  cout<<maxi<<endl;
-  cout<<smaxi;
-}
-int main(){
-  int arr[5]={12, 35, 1, 10, 3};
-  le(arr);
-  return 0;
 }
 
+int main() {
+    vector<int> arr = {2, 0, 2, 1, 1, 0};
+    f(arr);
+    for (int i : arr) {
+        cout << i;
+    }
+    return 0;
+}
 ```
+#### Dry Run
+given arr[]={2,0,2,1,1,0};
+
+i=0: low=0,mid=0,high=n-1 : arr={0,0,2,1,1,2}
+i=1: low=0,mid=0,high=n-2: arr={0,0,2,1,1,2}
+i=2: low=1,mid=0,high=n-2: arr={0,0,1,1,2,2}
+
+#### Complexity Analysis 
+Time Complexity: O(N), where N = size of the given array.
+Reason: We are using a single loop that can run at most N times.
+
+Space Complexity: O(1) as we are not using any extra space.
+
+### 3. Majority Elements (n/2 times)
+#### Find the Majority Element that occurs more than N/2 times
+
+#### Problem Statement: Given an array of N integers, write a program to return an element that occurs more than N/2 times in the given array. You may consider that such an element always exists in the array.
+
+Examples
+
+Example 1:
+Input Format: N = 3, nums[] = {3,2,3}
+Result: 3
+Explanation: When we just count the occurrences of each number and compare with half of the size of the array, you will get 3 for the above solution. 
+
+Example 2:
+Input Format:  N = 7, nums[] = {2,2,1,1,1,2,2}
+
+Result: 2
+
+Explanation: After counting the number of times each element appears and comparing it with half of array size, we get 2 as result.
+
+Example 3:
+Input Format:  N = 10, nums[] = {4,4,2,4,3,4,4,3,2,4}
+
+Result: 4
+
+#### Brute Force Approach 
+#### Approach 
+- First we will run a loop say(i) from 0 to n-1
+- Initialise count will be 0
+- Now run another loop from 0 to n-1
+- Check if v[i] is equal to v[j] increase count by 1.
+- After completing the loop Check if count is greater than n/2 if yes then return v[i] and if no then return -1.
+
+  #### Dry Run
+
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int f(vector<int> &v) {
+    int n = v.size();
+for(int i=0; i<n; i++){
+    int cnt=0; 
+    for(int j=0; j<n; j++){
+        if(v[i]==v[j]){
+            cnt++;
+        }
+    }
+    if(cnt>n/2){
+        return v[i];
+    }
+}
+    return -1;
+}
+
+int main() {
+    vector<int> arr = {2, 2, 1, 1, 1, 2,2};
+    cout<<f(arr);
+    
+return 0;
+}
+```
+#### Complexity Analysis 
+Time Complexity: O(N2), where N = size of the given array. Reason: For every element of the array the inner loop runs for N times. And there are N elements in the array. So, the total time complexity is O(N2). Space Complexity: O(1) as we use no extra space.
