@@ -813,3 +813,62 @@ return 0;
 ```
 #### Complexity Analysis 
 Time Complexity: O(N2), where N = size of the given array. Reason: For every element of the array the inner loop runs for N times. And there are N elements in the array. So, the total time complexity is O(N2). Space Complexity: O(1) as we use no extra space.
+
+#### Better Approach
+#### Approach
+- First initialise map
+- we will run a loop from 0 to n-1
+- Add value in map and count the occurrence.
+- After completing loop run an another loop
+- If map is greater than n/2 return map of first . Otherwise return -1.
+  
+#### Dry Run
+given arr[]={2,2,1,1,1,2,2}
+i=0: map={2:1},
+i=1: map={2:2}
+i=2: map={2:2,1:1}
+i=3: map={2:2,1:2}
+i=4: map={2:2,1:3}
+i=5: map={2:3,1:3}
+i=6: map={2:4,1:3}
+here 2 has 4 count and 4>3 so, answer is 2.
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int f(vector<int> &v) {
+    int n = v.size();
+    map<int,int> mpp;
+for(int i=0; i<n; i++){
+    mpp[v[i]]++;
+}
+    for(auto i:mpp){
+        if(i.second > n/2){
+            return i.first;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    vector<int> arr = {2, 2, 1, 1, 1, 2,2};
+    cout<<f(arr);
+    
+    return 0;
+}
+```
+#### Optimize Approach 
+#### Approach 
+- we will a initialise int variable el and count will be 0.
+- we will run a loop from 0 to n-1
+- inside loop first we check if count is 0 then increase by 1 and el will current element.
+- Else Check if v[i] is equal to el then increase count by 1.
+- Otherwise decrease count by -1.
+- After completing this we take another cnt1 and run an another loop
+- Check if v[i]==el increase cnt1 by 1.
+- After completing take another check if el>n/2 return el or n-1.
+
+#### Code 
+```
+```
