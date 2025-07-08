@@ -642,6 +642,11 @@ int main() {
     return 0;
 }
 ```
+#### Optimize Approach 
+### Approach 
+- First initialise three pointer left and mid with a value 0 and high with n-1.
+- Now run while loop until mid is less high.
+- Check if mid is equal to 0 then first swap arr of [low] to arr of [mid] and increases by 1.If mid is equal to 1;
 
 #### Reverse the original array by 2 pointer Algorithm:
 
