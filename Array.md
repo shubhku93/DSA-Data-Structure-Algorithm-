@@ -380,7 +380,7 @@ Dry Run</summary>
 
 ## Midium Problem
 
-### 2Sum Problem
+### 1. 2Sum Problem
 ### Two Sum : Check if a pair with given sum exists in Array
 
 #### Problem Statement: Given an array of integers arr[] and an integer target.
@@ -559,7 +559,22 @@ vector<int>ans=f(v,4);
 ```
 #### Complexity Analysis 
 
-### Sort 0s,1s and 2s
+### 2.Sort 0s,1s and 2s
+### Sort an array of 0s, 1s and 2s
+
+### Problem Statement: Given an array consisting of only 0s, 1s, and 2s. Write a program to in-place sort the array without using inbuilt sort functions. ( Expected: Single pass-O(N) and constant space)
+
+Examples
+Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+
+Input: nums = [2,0,1]
+Output: [0,1,2]
+
+Input: nums = [0]
+Output: [0]
+
+#### Brute Force Approach 
 
 #### Approach 
 - First initialise three variables cnt0, cnt1 and cnt2.
@@ -571,8 +586,63 @@ vector<int>ans=f(v,4);
 - Third loop start from cnt0+cnt1 to n-1 in which we put 2 to arr[i].
 
 #### Dry Run
-i= 0: 
-  
+given arr[]= {2,0,2,1,1,0};
+i= 0:cnt0=0,cnt1=0,cnt2=1;
+i= 1:cnt0=1,cnt1=0,cnt2=1;
+i= 2:cnt0=1,cnt1=0,cnt2=2;
+i= 3:cnt0=1,cnt1=1,cnt2=2;
+i= 4:cnt0=1,cnt1=2,cnt2=2;
+i= 5:cnt0=2,cnt1=2,cnt2=2;
+then,
+from 0 to cnt0
+i=0:arr[]={0};
+i=1:arr[]={0,0};
+
+from cnt0 to cnt0+cnt1
+i=2:arr[]={0,0,1};
+i=3:arr[]={0,0,1,1};
+
+from cnt0+cnt1 to n
+i=4:arr[]={0,0,1,1,2};
+i=5:arr[]={0,0,1,1,2,2};
+
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+void f(vector<int> &v) {
+    int n = v.size();
+    // Initialise three counts for 0, 1, and 2.
+    int cnt0 = 0, cnt1 = 0, cnt2 = 0;
+    for (int i = 0; i < n; i++) {
+        // Count the occurrences of 0s, 1s, and 2s
+        if (v[i] == 0) cnt0++;
+        else if (v[i] == 1) cnt1++;
+        else if (v[i] == 2) cnt2++;
+    }
+    // Now Arrange them in array 
+    for (int i = 0; i < cnt0; i++) {
+        v[i] = 0;
+    }
+    for (int i = cnt0; i < cnt0 + cnt1; i++) {
+        v[i] = 1;
+    }
+    for (int i = cnt0 + cnt1; i < cnt0 + cnt1 + cnt2; i++) {
+        v[i] = 2;
+    }
+}
+
+int main() {
+    vector<int> arr = {2, 0, 2, 1, 1, 0};
+    f(arr);
+    for (int i : arr) {
+        cout << i;
+    }
+    return 0;
+}
+```
+
 #### Reverse the original array by 2 pointer Algorithm:
 
 ```
