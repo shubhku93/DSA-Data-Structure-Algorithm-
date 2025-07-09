@@ -871,4 +871,143 @@ int main() {
 
 #### Code 
 ```
+#include <bits/stdc++.h>
+using namespace std;
+
+int f(vector<int> &v) {
+    int n = v.size();
+    int cnt= 0;
+    int el;
+    for(int i=0; i<n; i++){
+        // Check if count is 0 than increase count and initialise el 
+        if(cnt==0){
+            cnt++;
+            el= v[i];
+        }
+            //if el is equal to current element increase count
+        else if(v[i]==el){
+            cnt++;
+        }
+            // Otherwise decrease count
+        else cnt--;
+    }
+    // Now count all occurrence of that element which has count
+    int count=0;
+    for(int i=0;i<n;i++){
+        if(v[i]==el){
+          count++ ; 
+        }
+        if(count>n/2) return v[i];
+    }
+    return -1;
+}
+
+int main() {
+    vector<int> arr = { 2,2, 1, 1, 1, 2,2};
+    cout<<f(arr);
+    
+    return 0;
+}
+```
+#### Complexity Analysis 
+Time Complexity: O(N) + O(N), where N = size of the given array.
+Reason: The first O(N) is to calculate the count and find the expected majority element. The second one is to check if the expected element is the majority one or not.
+
+#### 4. Kadane's Algorithm : Maximum Subarray Sum in an Array
+#### Problem Statement: Given an integer array arr, find the contiguous subarray (containing at least one number) which
+has the largest sum and returns its sum and prints the subarray.
+
+Examples
+Example 1:
+
+Input: arr = [-2,1,-3,4,-1,2,1,-5,4] 
+
+Output: 6 
+
+Explanation: [4,-1,2,1] has the largest sum = 6. 
+
+Examples 2: 
+
+Input: arr = [1] 
+
+Output: 1 
+
+Explanation: Array has only one element and which is giving positive sum of 1. 
+Disclaimer: Don’t jump directly to the solution, try it out yourself first.
+#### Brute Force Approach 
+#### Approach 
+- First initialise maxi with a value 0 
+- We will run a loop from 0 to n-1
+- inside loop We set sum with 0
+- And run another loop from i to avoid repeated sum to n-1.
+- Add v[i] to sum and check if sum greater than maxi then put maxi will be sum.
+ 
+#### Dry Run
+![1000034619](https://github.com/user-attachments/assets/16630dfa-e9f8-472f-808f-885b469fa2e0)
+
+#### Code 
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int f(vector<int> &v) {
+    int n = v.size();
+    // To store max sum
+    int maxi= 0;
+    for(int i=0; i<n; i++){
+        int sum=0;
+        for(int j=i; j<n; j++){
+            sum+=v[j];
+            // take only max sum 
+            maxi= max(maxi,sum);
+        }
+        
+    }
+   return maxi;
+}
+
+int main() {
+    vector<int> arr = { -2,1,-3,4,-1,2,1,-5,4};
+    cout<<f(arr);
+    
+    return 0;
+}
+```
+#### Optimize Approach 
+#### Approach 
+- First initialise maxi with a value 0 
+- We will run a loop from 0 to n-1
+- inside loop We set sum with 0
+- And run another loop from i to avoid repeated sum to n-1.
+- Add v[i] to sum and check if sum greater than maxi then put maxi will be sum.
+- To avoid the negative values we use kadane Algorithm.
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int f(vector<int> &v) {
+    int n = v.size();
+    // To store max sum
+    int maxi= 0;
+    for(int i=0; i<n; i++){
+        int sum=0;
+        for(int j=i; j<n; j++){
+            sum+=v[j];
+            // take only max sum 
+            maxi= max(maxi,sum);
+        }
+        // To avoid negetive value we use kadane Algorithm 
+        if(sum<0)
+            sum=0;
+    }
+   return maxi;
+}
+
+int main() {
+    vector<int> arr = { -2,1,-3,4,-1,2,1,-5,4};
+    cout<<f(arr);
+    
+    return 0;
+}
 ```
