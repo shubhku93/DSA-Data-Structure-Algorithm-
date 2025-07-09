@@ -1037,3 +1037,7 @@ done and the max profit = 0.
 
 #### Brute Force Approach 
 #### Approach 
+- Use a for loop of ‘i’ from 0 to n.
+- Use another for loop of j from ‘i+1’ to n.
+- If arr[j] > arr[i] , take the difference and compare  and store it in the maxPro variable.
+- Return maxPro.
