@@ -1041,3 +1041,63 @@ done and the max profit = 0.
 - Use another for loop of j from ‘i+1’ to n.
 - If arr[j] > arr[i] , take the difference and compare  and store it in the maxPro variable.
 - Return maxPro.
+#### Dry Run
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int f(vector<int> &v) {
+    int n = v.size();
+    // To store max sum
+    int profit=0;
+    for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++){
+            if(v[j]>v[i]){
+                profit= max(profit,v[j]-v[i]);
+            }
+        }
+    }
+    return profit;
+}
+
+int main() {
+    vector<int> arr = {7,1,5,3,6,4};
+    cout<<f(arr);
+    
+    return 0;
+}
+```
+#### Optimize Approach 
+#### Approach 
+- Create a variable maxPro and store 0 initially.
+- Create a variable minPrice and store some larger value(ex: MAX_VALUE) value initially.
+- Run a for loop from 0 to n.
+- Update the minPrice if it is greater than the current element of the array
+- Take the difference of the minPrice with the current element of the array and compare and maintain it in maxPro.
+- Return the maxPro.
+#### Dry Run
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int f(vector<int> &v) {
+    int n = v.size();
+
+    int profit=0;
+    int buy=INT_MAX;
+    for(int i=0; i<n; i++){
+       buy = min(buy,v[i]);
+        profit= max(profit,v[i] -buy);
+    }
+    return profit;
+}
+
+int main() {
+    vector<int> arr = {7,1,5,3,6,4};
+    cout<<f(arr);
+    
+    return 0;
+}
+```
