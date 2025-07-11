@@ -1324,3 +1324,99 @@ Time Complexity: O(2*N) { The worst case complexity is O(2*N) which is a combina
 Explanation: The second O(N) is a combination of O(min(pos, neg)) + O(leftover elements). There can be two cases: when only positive or only negative elements are present, O(min(pos, neg)) + O(leftover) = O(0) + O(N), and when equal no. of positive and negative elements are present, O(min(pos, neg)) + O(leftover) = O(N/2) + O(0). So, from these two cases, we can say the worst-case time complexity is O(N) for the second part, and by adding the first part we get the total complexity of O(2*N).
 
 Space Complexity:  O(N/2 + N/2) = O(N) { N/2 space required for each of the positive and negative element arrays, where N = size of the array A}.
+### 7. Leaders in an Array
+#### Problem Statement: Given an array, print all the elements which are leaders. A Leader is an element that is greater than all of the elements on its right side in the array.
+Examples
+Example 1:
+Input:
+ arr = [4, 7, 1, 0]
+Output:
+ 7 1 0
+Explanation:
+ Rightmost element is always a leader. 7 and 1 are greater than the elements in their right side.
+Example 2:
+Input:
+ arr = [10, 22, 12, 3, 0, 6]
+Output:
+ 22 12 6
+Explanation:
+ 6 is a leader. In addition to that, 12 is greater than all the elements in its right side (3, 0, 6), also 22 is greater than 12, 3, 0, 6.
+ #### Brute Force Approach 
+ #### Approach 
+-  In this brute force approach, we start checking all the elements from the start of the array to the end to see if an element is greater than all the elements on its right (i.e, the leader).
+- For this, we will use nested loops where the outer loop will check for each element in the array whether it is a leader or not.
+- The inner loop checks if there is any element to the right that is greater than the element currently traversed by the outer loop.
+- We start by initializing the outer loop pointer to the start element and setting it as the current leader.
+- If any element traversed is found greater than the element currently set as a leader, it will not go to the ans array and we increment the outer loop pointer by 1 and set the next element as the current leader.
+- If we don’t find any other element to the right greater than the current element, then we push the current element to the ans array stating that is it the leader element.
+#### Code 
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+vector <int>f(vector<int> &v) {
+    int n= v.size();
+    vector<int> ans;
+    for(int i=0; i<n; i++){
+        bool leader=true;
+       for(int j= i+1; j<n; j++){
+           if(v[j]>v[i]){
+               leader= false;
+               break;
+           }
+       }
+        if(leader){
+            ans.push_back(v[i]);
+        }
+    }
+    return ans;
+}
+
+
+int main() {
+    vector<int> arr = {4, 7, 1, 0};
+   vector <int> ans = f(arr);
+    for(auto i:ans)
+        cout<<i<<" ";
+    return 0;
+}
+```
+#### Complexity Analysis 
+Time Complexity: O(N^2) { Since there are nested loops being used, at the worst case n^2 time would be consumed }.
+
+Space Complexity: O(N) { There is no extra space being used in this approach. But, a O(N) of space for ans array will be used in the worst case }.
+#### Optimize Approach 
+#### Approach 
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+vector <int>f(vector<int> &v) {
+    int n= v.size();
+    vector<int> ans;
+    int max=v[n-1];
+    ans.push_back(v[n-1]);
+    for(int i=n-2; i>0; i--){
+        if(v[i]>max){
+            ans.push_back(v[i]);
+            max=ans[i];
+        }
+    }
+    return ans;
+}
+
+
+int main() {
+    vector<int> arr = {4, 7, 1, 0};
+   vector <int> ans = f(arr);
+    for(int i= ans.size()-1; i>=0;i--)
+        cout<<ans[i]<<" ";
+    return 0;
+}
+```
+#### Complexity Analysis 
+Time Complexity: O(N) { Since the array is traversed single time back to front, it will consume O(N) of time where N = size of the array }.
+Space Complexity: O(N) { There is no extra space being used in this approach. But, a O(N) of space for ans array will be used in the worst case }.
+
+### 8. 
