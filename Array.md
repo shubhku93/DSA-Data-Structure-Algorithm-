@@ -1420,3 +1420,35 @@ Time Complexity: O(N) { Since the array is traversed single time back to front, 
 Space Complexity: O(N) { There is no extra space being used in this approach. But, a O(N) of space for ans array will be used in the worst case }.
 
 ### 8. 
+### Print Pascal Triangle 
+```
+int bino(int n,int k){
+    int res=1;
+    if(k>n-k) k= n-k;
+    for(int i=0; i<k; i++){
+        res*= n-i;
+        res/= i+1;
+    }
+    return res;
+}
+void ma(int r){
+    int n= r;
+    
+    for(int i=0; i<n; i++){
+        for(int j=0; j<=i; j++){
+           cout<<" "<< bino(i,j); 
+            
+        }cout<<endl;
+    }
+}
+
+
+int main() {
+    vector<int> arr = {4, 7, 1, 0};
+  // vector <int> ans = f(arr);
+    
+     ma(7);
+    
+    return 0;
+}
+```
