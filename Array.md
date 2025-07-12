@@ -1419,7 +1419,139 @@ int main() {
 Time Complexity: O(N) { Since the array is traversed single time back to front, it will consume O(N) of time where N = size of the array }.
 Space Complexity: O(N) { There is no extra space being used in this approach. But, a O(N) of space for ans array will be used in the worst case }.
 
-### 8. 
+### 8. Longest Consecutive Sequence in an Array
+
+Mark as Completed
+
+538
+
+
+Problem Statement: You are given an array of ‘N’ integers. You need to find the length of the longest sequence which contains the consecutive elements.
+
+Examples
+
+Example 1:
+
+Input: [100, 200, 1, 3, 2, 4]
+
+Output: 4
+
+Explanation: The longest consecutive subsequence is 1, 2, 3, and 4.
+
+Input: [3, 8, 5, 7, 6]
+
+Output: 4
+
+Explanation: The longest consecutive subsequence is 5, 6, 7, and 8.
+
+#### Brute Force Approach 
+#### Approach 
+- To begin, we will utilize a loop to iterate through each element one by one.
+- Next, for every element x, we will try to find the consecutive elements like x+1, x+2, x+3, and so on using the linear search algorithm in the given array.
+- Within a loop, our objective is to locate the next consecutive element x+1. 
+- If this element is found, we increment x by 1 and continue the search for x+2. 
+- Furthermore, we increment the length of the current sequence (cnt) by 1.
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+bool search(vector<int>&v,int num){
+    int n= v.size();
+    for(int i=0; i<n; i++){
+        if(v[i]==num) return true;
+    }
+    return false;
+}
+int f(vector<int> &v){
+    int n= v.size();
+    int longest=1;
+    for(int i=0; i<n; i++){
+        int x= v[i];
+        int cnt=1;
+        while(search(v,x+1)==true){
+            x+=1;
+            cnt+=1;
+        }
+        longest= max(longest,cnt);
+    }
+   return longest;
+}
+int main() {
+    
+    vector<int> a = {100, 200, 1, 2, 3, 4};
+    cout<<f(a);
+    return 0;
+}
+```
+#### Complexity Analysis 
+Complexity Analysis
+
+Time Complexity: O(N2), N = size of the given array.
+Reason: We are using nested loops each running for approximately N times.
+
+Space Complexity: O(1), as we are not using any extra space to solve this problem.
+
+#### Better Approach 
+#### Approach 
+- We will consider 3 variables, 
+‘lastSmaller’ →(to store the last included element of the current sequence), 
+‘cnt’ → (to store the length of the current sequence), 
+‘longest’ → (to store the maximum length).
+- Initialize ‘lastSmaller’ with ‘INT_MIN’, ‘cnt’ with 0, and ‘longest’ with 1(as the minimum length of the sequence is 1).
+The steps are as follows:
+
+- First, we will sort the entire array.
+- To begin, we will utilize a loop(say i) to iterate through each element one by one.
+- For every element, we will check if this can be a part of the current sequence like the following:
+- If arr[i]-1 == lastSmaller: The last element in our sequence is labeled as 'lastSmaller' and the current element 'arr[i]' is exactly 'lastSmaller'+1. It indicates that 'arr[i]' is the next consecutive element. To incorporate it into the sequence, we update 'lastSmaller' with the value of 'arr[i]' and increment the length of the current sequence, denoted as 'cnt', by 1.
+- If arr[i] == lastSmaller: If the current element, arr[i], matches the last element of the sequence (represented by 'lastSmaller'), we can skip it since we have already included it before.
+- Otherwise, if lastSmaller != arr[i]: On satisfying this condition, we can conclude that the current element, arr[i] > lastSmaller+1. It indicates that arr[i] cannot be a part of the current sequence. So, we will start a new sequence from arr[i] by updating ‘lastSmaller’ with the value of arr[i]. And we will set the length of the current sequence(cnt) to 1.
+- Every time, inside the loop, we will compare ‘cnt’ and ‘longest’ and update ‘longest’ with the maximum value. longest = max(longest, cnt)
+- Finally, once the iteration is complete, we will have the answer stored in the variable ‘longest’.
+
+#### Code
+```
+#include <bits/stdc++.h>
+using namespace std;
+int f(vector<int> &v){
+  int n= v.size();
+    if(n==0) return 0;
+    int last=INT_MIN;
+    int longest = 1,cnt=0;
+    sort(v.begin(),v.end());
+    for(int i=0; i<n; i++){
+        if(v[i]-1==last){
+            cnt+=1;
+            last= v[i];
+        }
+        else if(v[i]!=last){
+            cnt=1;
+            last= v[i];
+        }
+        longest= max(longest,cnt);
+    }
+    return longest;
+    
+}
+int main() {
+    
+    vector<int> a = {100, 200, 1, 2, 3, 4};
+    cout<<f(a);
+    return 0;
+}
+```
+#### Complexity Analysis 
+Time Complexity: O(NlogN) + O(N), N = size of the given array.
+Reason: O(NlogN) for sorting the array. To find the longest sequence, we are using a loop that results in O(N).
+
+Space Complexity: O(1), as we are not using any extra space to solve this problem.
+
+#### Optimize Approach 
+#### Approach 
+#### Code
+```
+
+```
 ### Print Pascal Triangle 
 ```
 int bino(int n,int k){
