@@ -1571,8 +1571,36 @@ Explanation: The subarrays that sum up to 3 are [1, 2], and [3].
 #### Approach 
 #### Code
 ```
-
+int f(vector<int> &v,int k){
+    int n= v.size();
+    int cnt=0;
+    for(int i=0; i<n;i++){
+        int sum=0;
+        for(int j=i; j<n; j++){
+            sum+=v[j];
+            if(sum==k){
+                cnt++;
+            }
+        }
+    }
+    return cnt;
+}
+int main() {
+    vector<int> v={3,1,2,4};
+    cout<<f(v,6);
+    return 0;
+}
 ```
+#### Complexity Analysis 
+Time Complexity: O(N2), where N = size of the array.
+Reason: We are using two nested loops here. As each of them is running for exactly N times, the time complexity will be approximately O(N2).
+
+Space Complexity: O(1) as we are not using any extra space.
+
+#### Optimize Approach 
+#### Approach 
+#### Code 
+
 ### Print Pascal Triangle 
 ```
 int bino(int n,int k){
